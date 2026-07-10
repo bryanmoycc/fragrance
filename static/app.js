@@ -48,6 +48,7 @@ function renderCard(frag) {
         ? `<div class="rating">★ ${frag.rating_value.toFixed(2)} <span class="rating-count">(${(frag.rating_count ?? 0).toLocaleString()})</span></div>`
         : `<div class="rating placeholder">No rating yet</div>`
     }
+    ${frag.price_avg ? `<div class="price">avg $${frag.price_avg.toFixed(2)}</div>` : ""}
     <div class="pills">
       ${frag.main_accords
         .slice(0, 4)
@@ -80,10 +81,9 @@ async function openDetail(id) {
     ? `<div class="pills"><span class="pill">${escapeHtml(f.season)}</span></div>`
     : `<div class="placeholder">Not yet available</div>`;
 
-  const priceHtml =
-    f.price_low || f.price_avg || f.price_high
-      ? `<div>Low: $${f.price_low ?? "?"} · Avg: $${f.price_avg ?? "?"} · High: $${f.price_high ?? "?"}</div>`
-      : `<div class="placeholder">Not yet available</div>`;
+  const priceHtml = f.price_avg
+    ? `<div>Avg: $${f.price_avg.toFixed(2)} <span class="rating-count">(low $${f.price_low.toFixed(2)} · high $${f.price_high.toFixed(2)})</span></div>`
+    : `<div class="placeholder">Not yet available</div>`;
 
   detailContent.innerHTML = `
     <h2>${escapeHtml(f.name)}</h2>

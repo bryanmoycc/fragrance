@@ -37,6 +37,7 @@ def row_to_summary(row):
         "main_accords": split_list(row["main_accords"]),
         "rating_value": row["rating_value"],
         "rating_count": row["rating_count"],
+        "price_avg": row["price_avg"],
     }
 
 

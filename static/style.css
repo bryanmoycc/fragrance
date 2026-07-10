@@ -113,6 +113,12 @@ main {
   font-style: italic;
 }
 
+.price {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
 .pills {
   display: flex;
   flex-wrap: wrap;
