@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fragrance Profiles</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Fragrance Profiles</h1>
+    <div class="search-bar">
+      <input id="q" type="search" placeholder="Search by name or brand…" autofocus />
+      <input id="note" type="search" placeholder="Filter by note (e.g. vanilla)…" />
+    </div>
+  </header>
+
+  <main>
+    <div id="status"></div>
+    <div id="grid" class="grid"></div>
+    <button id="load-more" hidden>Load more</button>
+  </main>
+
+  <dialog id="detail-dialog">
+    <button id="close-dialog" aria-label="Close">×</button>
+    <div id="detail-content"></div>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
