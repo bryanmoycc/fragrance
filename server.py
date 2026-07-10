@@ -36,6 +36,7 @@ def row_to_summary(row):
         "release_year": row["release_year"],
         "main_accords": split_list(row["main_accords"]),
         "rating_value": row["rating_value"],
+        "rating_count": row["rating_count"],
     }
 
 

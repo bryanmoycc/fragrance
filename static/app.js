@@ -43,6 +43,11 @@ function renderCard(frag) {
     <div class="brand">${escapeHtml(frag.brand || "Unknown brand")}${
       frag.release_year ? " · " + frag.release_year : ""
     }</div>
+    ${
+      frag.rating_value
+        ? `<div class="rating">★ ${frag.rating_value.toFixed(2)} <span class="rating-count">(${(frag.rating_count ?? 0).toLocaleString()})</span></div>`
+        : `<div class="rating placeholder">No rating yet</div>`
+    }
     <div class="pills">
       ${frag.main_accords
         .slice(0, 4)

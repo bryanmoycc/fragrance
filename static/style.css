@@ -98,6 +98,21 @@ main {
   margin-bottom: 0.5rem;
 }
 
+.rating {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #c8952a;
+}
+
+.rating-count {
+  color: var(--muted);
+}
+
+.rating.placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
 .pills {
   display: flex;
   flex-wrap: wrap;
