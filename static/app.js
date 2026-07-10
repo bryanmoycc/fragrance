@@ -38,6 +38,9 @@ async function search(reset) {
 function renderCard(frag) {
   const card = document.createElement("div");
   card.className = "card";
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-label", `${frag.name} by ${frag.brand || "unknown brand"}`);
   card.innerHTML = `
     <h3>${escapeHtml(frag.name)}</h3>
     <div class="brand">${escapeHtml(frag.brand || "Unknown brand")}${
@@ -57,6 +60,12 @@ function renderCard(frag) {
     </div>
   `;
   card.addEventListener("click", () => openDetail(frag.id));
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openDetail(frag.id);
+    }
+  });
   grid.appendChild(card);
 }
 
